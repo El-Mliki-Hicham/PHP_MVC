@@ -1,11 +1,12 @@
 <?php
 
-require_once(ROOT.'app/Controller.php');
-require_once(ROOT.'app/Model.php');
+
 // Genere les chemin ver indes.php
 
 define("ROOT",str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 
+require_once(ROOT.'app/Controller.php');
+require_once(ROOT.'app/Model.php');
 // die(ROOT);
 // On sépare les paramètres et on les met dans le tableau $params
 $params= explode("/",$_GET['p']);
