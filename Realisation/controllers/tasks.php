@@ -1,6 +1,6 @@
 <?php
 
-class Task {
+class Tasks {
 
 public function getTasks(){
 
