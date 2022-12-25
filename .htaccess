@@ -1,0 +1,2 @@
+RewriteEnfine On
+RewriteRule ^([a-zA-Z0-9\-\/]*)$ index.php?p=$1
