@@ -3,7 +3,7 @@
 abstract class Model {
 
     private $hostName = 'localhost';
-    private $dbName = 'gestion-employe';
+    private $dbName = 'tasks';
     private $userName = 'root';
     private $password = '';
 
@@ -16,7 +16,7 @@ abstract class Model {
 
         $this->connection = null;
         try {
-            $this->connection = new PDO('mysql:host='.$this->host.";dbname=".$this->dbName ,
+            $this->connection = new PDO('mysql:host='.$this->hostName.";dbname=".$this->dbName ,
             $this->userName,
             $this->password);
             $this->connection->exec('set names utf8');
@@ -25,6 +25,14 @@ abstract class Model {
            echo 'erreur' . $th->getMessage();
         }
     }
+
+    public function All(){
+        $sql = 'SELECT * FROM '.$this->table;
+        $query =$this->connection->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
 
 
 }

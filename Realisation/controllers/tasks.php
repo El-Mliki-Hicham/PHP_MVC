@@ -1,10 +1,12 @@
 <?php
 
-class Tasks {
+class Tasks extends Controller  {
 
 public function getTasks(){
-
-    echo 'tasks';
+    $this->loadModel("task");
+    $task= $this->task->All();
+    $name = "fff";
+    $this->render('index',compact('name'));
 }
 
 
