@@ -9,9 +9,11 @@ abstract class Controller {
     }
     
   
-    public function render(string $fichier){
-        require_once(ROOT. 'views/'.strtolower(get_class($this)).'/
-        '.$fichier.'.php');
+    public function render(string $fichier, array $data = []) {
+        extract($data);
+        // var_dump($data);
+        // die();
+        require_once(ROOT. 'views/'.strtolower(get_class($this)).'/'.$fichier.'.php');
         }
 }
 
